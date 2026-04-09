@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manual de Puesto – Coordinación de Ventas de Eventos | AMG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #26283F;
+      --dark: #1a1c2e;
+      --gray-dark: #333333;
+      --gray-mid: #666666;
+      --gray-light: #f4f4f4;
+      --border: #e0e0e0;
+      --accent: #EB4751;
+      --accent-light: #fde8e9;
+      --orange: #F98C53;
+      --orange-light: #fef0e6;
+      --lavender: #A3A7C6;
+      --lavender-light: #f0f1f7;
+      --red-light: #fdecea;
+      --red: #c0392b;
+      --white: #ffffff;
+      --font: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      --font-display: 'Playfair Display', Georgia, serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font);
+      background: var(--gray-light);
+      color: var(--black);
+      line-height: 1.7;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--black);
+      color: var(--white);
+      padding: 40px 60px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 4px;
+      background: linear-gradient(90deg, var(--accent) 0%, var(--orange) 100%);
+    }
+
+    /* AMG Logo */
+    .amg-logo {
+      display: flex;
+      align-items: flex-end;
+      gap: 0;
+      margin-bottom: 28px;
+      line-height: 1;
+    }
+    .logo-wordmark {
+      font-family: var(--font-display);
+      font-size: 52px;
+      font-weight: 900;
+      color: var(--accent);
+      letter-spacing: -2px;
+      line-height: 1;
+    }
+    .logo-sub-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: 6px;
+      margin-left: 10px;
+    }
+    .logo-sub {
+      font-size: 11px;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--lavender);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .logo-dot {
+      color: var(--orange);
+      font-size: 14px;
+    }
+    .header-divider {
+      width: 48px;
+      height: 2px;
+      background: var(--accent);
+      margin-bottom: 20px;
+      opacity: 0.6;
+    }
+    .header-tag {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--orange);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    header h2 {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--lavender);
+    }
+    .header-meta {
+      margin-top: 24px;
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding-top: 20px;
+      border-top: 1px solid rgba(163,167,198,0.25);
+    }
+    .meta-item { display: flex; flex-direction: column; }
+    .meta-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--lavender);
+      opacity: 0.7;
+      margin-bottom: 2px;
+    }
+    .meta-value {
+      font-size: 14px;
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── SECTION ── */
+    section {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 40px 48px;
+      margin-top: 24px;
+      border: 1px solid var(--border);
+    }
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    section h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--gray-light);
+    }
+
+    /* ── PURPOSE BOX ── */
+    .purpose-box {
+      background: var(--black);
+      color: var(--white);
+      border-radius: 6px;
+      padding: 28px 32px;
+      font-size: 16px;
+      line-height: 1.8;
+      border-left: 4px solid var(--accent);
+    }
+
+    /* ── DEFINITIONS ── */
+    .def-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .def-card {
+      background: var(--lavender-light);
+      border-radius: 6px;
+      padding: 20px 24px;
+      border-left: 4px solid var(--lavender);
+    }
+    .def-term {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--black);
+      margin-bottom: 6px;
+    }
+    .def-etymology {
+      font-size: 11px;
+      color: var(--lavender);
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+    .def-desc {
+      font-size: 14px;
+      color: var(--gray-dark);
+      line-height: 1.6;
+    }
+    .def-examples {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--gray-mid);
+    }
+    .def-examples span {
+      font-weight: 600;
+      color: var(--gray-dark);
+    }
+
+    /* ── RESPONSIBILITIES ── */
+    .resp-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .resp-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 16px 20px;
+      background: var(--gray-light);
+      border-radius: 6px;
+      border-left: 3px solid var(--accent);
+    }
+    .resp-num {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      min-width: 24px;
+      padding-top: 2px;
+      letter-spacing: 1px;
+    }
+    .resp-content strong {
+      display: block;
+      font-size: 15px;
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+    .resp-content p {
+      font-size: 14px;
+      color: var(--gray-mid);
+      line-height: 1.6;
+    }
+
+    /* ── BRANDS GRID ── */
+    .brands-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .brand-card {
+      background: var(--gray-light);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 16px 20px;
+      border-top: 3px solid var(--accent);
+    }
+    .brand-card .brand-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+    .brand-card .brand-type {
+      font-size: 12px;
+      color: var(--gray-mid);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ── OPERATIONAL CYCLES ── */
+    .cycles-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .cycle-block {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .cycle-header {
+      background: var(--black);
+      color: var(--white);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .cycle-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: var(--orange);
+      color: var(--white);
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    .cycle-title {
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .cycle-body {
+      padding: 0;
+    }
+    .cycle-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cycle-step:last-child { border-bottom: none; }
+    .cycle-step-num {
+      min-width: 28px;
+      height: 28px;
+      background: var(--orange-light);
+      color: var(--black);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+    .cycle-step-content strong {
+      display: block;
+      font-size: 14px;
+      color: var(--black);
+      margin-bottom: 3px;
+    }
+    .cycle-step-content p {
+      font-size: 13px;
+      color: var(--gray-mid);
+      line-height: 1.6;
+    }
+
+    /* ── KPI TABLE ── */
+    .kpi-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .kpi-table thead tr {
+      background: var(--black);
+      color: var(--white);
+    }
+    .kpi-table thead th {
+      padding: 12px 18px;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-align: left;
+      font-weight: 600;
+    }
+    .kpi-table tbody tr {
+      border-bottom: 1px solid var(--border);
+    }
+    .kpi-table tbody tr:nth-child(even) {
+      background: var(--gray-light);
+    }
+    .kpi-table tbody td {
+      padding: 13px 18px;
+      font-size: 14px;
+      color: var(--gray-dark);
+      vertical-align: top;
+    }
+    .kpi-table tbody td:first-child {
+      font-weight: 600;
+      color: var(--black);
+      width: 220px;
+    }
+    .kpi-note {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--gray-mid);
+      font-style: italic;
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+    }
+
+    /* ── AUTHORITY / ESCALATION ── */
+    .authority-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .authority-card {
+      border-radius: 6px;
+      padding: 20px 24px;
+      border: 1px solid var(--border);
+    }
+    .authority-card.can {
+      border-top: 3px solid #27ae60;
+      background: #f0faf4;
+    }
+    .authority-card.cannot {
+      border-top: 3px solid var(--red);
+      background: var(--red-light);
+    }
+    .authority-card h4 {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .authority-card.can h4 { color: #1e8449; }
+    .authority-card.cannot h4 { color: var(--red); }
+    .authority-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .authority-card ul li {
+      font-size: 13px;
+      color: var(--gray-dark);
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.5;
+    }
+    .authority-card ul li:last-child { border-bottom: none; }
+    .authority-card.can ul li::before {
+      content: '✓';
+      color: #27ae60;
+      font-weight: 700;
+      font-size: 13px;
+      margin-top: 1px;
+    }
+    .authority-card.cannot ul li::before {
+      content: '↑';
+      color: var(--red);
+      font-weight: 700;
+      font-size: 13px;
+      margin-top: 1px;
+    }
+    .escalation-note {
+      margin-top: 16px;
+      background: var(--lavender-light);
+      border-radius: 6px;
+      padding: 16px 20px;
+      font-size: 13px;
+      color: var(--gray-dark);
+      border-left: 3px solid var(--lavender);
+    }
+    .escalation-note strong { color: var(--black); }
+
+    /* ── REPORTING SECTION ── */
+    .report-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .report-card {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 22px 24px;
+      border-top: 3px solid var(--accent);
+    }
+    .report-card h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 10px;
+    }
+    .report-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .report-card ul li {
+      font-size: 13px;
+      color: var(--gray-mid);
+      padding: 5px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .report-card ul li:last-child { border-bottom: none; }
+    .report-card ul li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .badge-week { background: var(--orange-light); color: #b05a10; }
+    .badge-month { background: #e8f0fe; color: #2d5ac7; }
+
+    /* ── RELATIONS ── */
+    .relations-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .relation-card {
+      background: var(--gray-light);
+      border-radius: 6px;
+      padding: 20px 24px;
+    }
+    .relation-card .rel-direction {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .relation-card .rel-who {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 6px;
+    }
+    .relation-card .rel-desc {
+      font-size: 13px;
+      color: var(--gray-mid);
+      line-height: 1.6;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      color: #666;
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-top: 40px;
+    }
+    footer span { color: var(--accent); }
+
+    @media (max-width: 680px) {
+      header { padding: 32px 24px 28px; }
+      section { padding: 28px 24px; }
+      .report-cards,
+      .relations-grid,
+      .def-grid,
+      .authority-grid { grid-template-columns: 1fr; }
+      .header-meta { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="amg-logo">
+      <span class="logo-wordmark">amg</span>
+      <div class="logo-sub-wrap">
+        <span class="logo-sub">Hospitality Group <span class="logo-dot">●</span></span>
+      </div>
+    </div>
+    <div class="header-divider"></div>
+    <div class="header-tag">Manual de Puesto · Marketing</div>
+    <h1>Coordinación de Ventas<br>de Eventos</h1>
+    <h2>Área de Marketing · AMG Hospitality Group</h2>
+    <div class="header-meta">
+      <div class="meta-item">
+        <span class="meta-label">Reporta a</span>
+        <span class="meta-value">Gerencia de Marketing</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Área</span>
+        <span class="meta-value">Marketing</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Versión</span>
+        <span class="meta-value">1.2 · Abril 2026</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- 01 · PROPÓSITO -->
+    <section>
+      <div class="section-label">01 · Propósito</div>
+      <h3>¿Para qué existe este puesto?</h3>
+      <div class="purpose-box">
+        Aumentar los ingresos de AMG a través de la <strong>venta de eventos y pedidos especiales</strong> de todas las marcas del grupo. Para lograrlo, este puesto diseña estrategias comerciales por marca, genera y cierra leads, y acompaña cada venta desde el primer contacto hasta la conclusión del evento —garantizando tanto el ingreso como la satisfacción del cliente.
+      </div>
+    </section>
+
+    <!-- 02 · DEFINICIONES -->
+    <section>
+      <div class="section-label">02 · Definiciones</div>
+      <h3>¿Qué es un Evento y qué es un Pedido Especial?</h3>
+      <div class="def-grid">
+        <div class="def-card">
+          <div class="def-term">Evento</div>
+          <div class="def-etymology">Del latín <em>eventus</em>: "lo que sale", "lo que ocurre" — resultado de algo que se convoca.</div>
+          <div class="def-desc">Contratación del espacio y/o servicio de una o varias marcas de AMG para celebraciones, reuniones o actividades grupales con fecha, horario y número de comensales definidos. Implica coordinación logística con Operaciones.</div>
+          <div class="def-examples"><span>Ejemplos:</span> cena de empresa, cumpleaños privado, despedida de soltero/a, evento corporativo, reunión de equipo.</div>
+        </div>
+        <div class="def-card">
+          <div class="def-term">Pedido Especial</div>
+          <div class="def-etymology">Del latín <em>specialis</em>: "de una especie particular" — lo que se distingue del flujo ordinario.</div>
+          <div class="def-desc">Solicitud de producto o servicio fuera del menú o flujo estándar de una marca AMG. Puede implicar volumen, personalización, entrega en ubicación externa o combinaciones de marcas. Requiere cotización y aprobación operativa.</div>
+          <div class="def-examples"><span>Ejemplos:</span> pedido de catering para oficina, canastas o paquetes personalizados, entrega masiva a un evento externo, menú adaptado para grupo con restricciones alimentarias.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 · RESPONSABILIDADES -->
+    <section>
+      <div class="section-label">03 · Responsabilidades Clave</div>
+      <h3>¿Qué hace este puesto?</h3>
+      <div class="resp-list">
+
+        <div class="resp-item">
+          <span class="resp-num">01</span>
+          <div class="resp-content">
+            <strong>Diseño de estrategia comercial por marca</strong>
+            <p>Crea la estrategia básica para alcanzar las metas de ventas de eventos y pedidos especiales definidas por Dirección y Gerencia de Marketing, adaptada a los objetivos específicos de cada marca del grupo.</p>
+          </div>
+        </div>
+
+        <div class="resp-item">
+          <span class="resp-num">02</span>
+          <div class="resp-content">
+            <strong>Visión integral por marca</strong>
+            <p>Analiza cada marca de forma individual —su propuesta de valor, audiencia y potencial comercial— para definir cómo lograr los objetivos de ventas en eventos y pedidos especiales de manera diferenciada.</p>
+          </div>
+        </div>
+
+        <div class="resp-item">
+          <span class="resp-num">03</span>
+          <div class="resp-content">
+            <strong>Coordinación de ejecución de estrategias</strong>
+            <p>Trabaja en conjunto con los Coordinadores de Marca de AMG para ejecutar todas las acciones de marketing necesarias —contenido, campañas, activaciones, comunicación— orientadas a generar leads para eventos y pedidos especiales.</p>
+          </div>
+        </div>
+
+        <div class="resp-item">
+          <span class="resp-num">04</span>
+          <div class="resp-content">
+            <strong>Seguimiento y aseguramiento de resultados</strong>
+            <p>Da seguimiento activo a todas las acciones definidas en la estrategia, asegurando que se ejecuten a tiempo, con la calidad requerida y alineadas a las metas establecidas. Identifica desviaciones y toma acciones correctivas oportunas.</p>
+          </div>
+        </div>
+
+        <div class="resp-item">
+          <span class="resp-num">05</span>
+          <div class="resp-content">
+            <strong>Gestión comercial y cierre de leads</strong>
+            <p>Recibe, administra y da seguimiento a todos los leads entrantes. Elabora cotizaciones, gestiona la documentación necesaria para formalizar la venta, funge como enlace con Operaciones para validar viabilidad logística, y conduce el proceso de venta hasta su cierre.</p>
+          </div>
+        </div>
+
+        <div class="resp-item">
+          <span class="resp-num">06</span>
+          <div class="resp-content">
+            <strong>Cumplimiento de metas de ventas</strong>
+            <p>Es responsable directo del logro de las metas de ingresos por venta de eventos y pedidos especiales, tanto a nivel total del grupo como por marca individual.</p>
+          </div>
+        </div>
+
+        <div class="resp-item">
+          <span class="resp-num">07</span>
+          <div class="resp-content">
+            <strong>Coordinación operativa post-cierre y atención al cliente</strong>
+            <p>Una vez confirmada la venta, coordina con Operaciones todos los detalles logísticos del evento o pedido especial. Da seguimiento al cliente durante el proceso y mantiene la atención post-evento para confirmar su satisfacción y fortalecer la relación comercial.</p>
+          </div>
+        </div>
+
+        <div class="resp-item">
+          <span class="resp-num">08</span>
+          <div class="resp-content">
+            <strong>Reporte de resultados</strong>
+            <p>Presenta un reporte semanal y uno mensual a Gerencia de Marketing con los resultados de ventas, estado del pipeline de leads, avance por marca y observaciones estratégicas relevantes.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 04 · MARCAS -->
+    <section>
+      <div class="section-label">04 · Marcas bajo gestión</div>
+      <h3>¿Qué marcas maneja?</h3>
+      <div class="brands-grid">
+        <div class="brand-card">
+          <div class="brand-name">Chubbies Burger</div>
+          <div class="brand-type">Hamburguesas</div>
+        </div>
+        <div class="brand-card">
+          <div class="brand-name">Muy Gallito Fried Chicken</div>
+          <div class="brand-type">Pollo frito</div>
+        </div>
+        <div class="brand-card">
+          <div class="brand-name">Fat Bastard Burger</div>
+          <div class="brand-type">Hamburguesas</div>
+        </div>
+        <div class="brand-card">
+          <div class="brand-name">Tiin Thai</div>
+          <div class="brand-type">Cocina tailandesa</div>
+        </div>
+        <div class="brand-card">
+          <div class="brand-name">Brass Monkey Pizza</div>
+          <div class="brand-type">Pizza</div>
+        </div>
+        <div class="brand-card">
+          <div class="brand-name">Palermo Empanadas Argentinas</div>
+          <div class="brand-type">Empanadas</div>
+        </div>
+        <div class="brand-card">
+          <div class="brand-name">Kab Khao Thai Eatery</div>
+          <div class="brand-type">Cocina tailandesa</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 · CICLOS OPERATIVOS -->
+    <section>
+      <div class="section-label">05 · Ciclos Operativos</div>
+      <h3>¿Cómo opera el puesto día a día?</h3>
+      <div class="cycles-wrapper">
+
+        <!-- Ciclo por Lead -->
+        <div class="cycle-block">
+          <div class="cycle-header">
+            <span class="cycle-tag">Por Lead</span>
+            <span class="cycle-title">Ciclo de vida de cada evento o pedido especial</span>
+          </div>
+          <div class="cycle-body">
+            <div class="cycle-step">
+              <div class="cycle-step-num">1</div>
+              <div class="cycle-step-content">
+                <strong>Recepción y calificación</strong>
+                <p>El lead entra por cualquier canal (redes, referido, web, llamada). Se registra, se califica —tipo de evento o pedido, fecha, número de personas, marca de interés— y se responde en el menor tiempo posible.</p>
+              </div>
+            </div>
+            <div class="cycle-step">
+              <div class="cycle-step-num">2</div>
+              <div class="cycle-step-content">
+                <strong>Cotización y documentación</strong>
+                <p>Se elabora la cotización correspondiente. Se gestiona la documentación necesaria para formalizar: confirmación de fecha, depósito, acuerdo de servicio u otro documento requerido.</p>
+              </div>
+            </div>
+            <div class="cycle-step">
+              <div class="cycle-step-num">3</div>
+              <div class="cycle-step-content">
+                <strong>Validación con Operaciones</strong>
+                <p>Se consulta con Operaciones la viabilidad logística del evento o pedido antes de confirmar al cliente: capacidad, insumos, personal, fechas disponibles.</p>
+              </div>
+            </div>
+            <div class="cycle-step">
+              <div class="cycle-step-num">4</div>
+              <div class="cycle-step-content">
+                <strong>Cierre de venta</strong>
+                <p>Se confirma la venta con el cliente y se registra en el pipeline. Se informa a Operaciones que la venta está cerrada y se inicia la coordinación de ejecución.</p>
+              </div>
+            </div>
+            <div class="cycle-step">
+              <div class="cycle-step-num">5</div>
+              <div class="cycle-step-content">
+                <strong>Coordinación operativa</strong>
+                <p>Se transmiten todos los detalles al equipo de Operaciones: logística, menú, horario, requerimientos especiales del cliente. Se da seguimiento a que todo esté listo para el día del evento.</p>
+              </div>
+            </div>
+            <div class="cycle-step">
+              <div class="cycle-step-num">6</div>
+              <div class="cycle-step-content">
+                <strong>Atención post-evento</strong>
+                <p>Se contacta al cliente después del evento para confirmar su satisfacción. Se atienden comentarios o incidencias. Se identifica potencial de recompra o referido.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ciclo Semanal -->
+        <div class="cycle-block">
+          <div class="cycle-header">
+            <span class="cycle-tag">Semanal</span>
+            <span class="cycle-title">Revisión y seguimiento de estrategia</span>
+          </div>
+          <div class="cycle-body">
+            <div class="cycle-step">
+              <div class="cycle-step-num">1</div>
+              <div class="cycle-step-content">
+                <strong>Revisión del pipeline</strong>
+                <p>Revisión del estado de todos los leads activos: pendientes de cotización, en negociación, confirmados, completados. Priorización de acciones de seguimiento.</p>
+              </div>
+            </div>
+            <div class="cycle-step">
+              <div class="cycle-step-num">2</div>
+              <div class="cycle-step-content">
+                <strong>Seguimiento con Coordinadores de Marca</strong>
+                <p>Verificación del avance de las acciones de marketing en ejecución por cada marca. Ajustes o escalaciones si algo está detenido o fuera de tiempo.</p>
+              </div>
+            </div>
+            <div class="cycle-step">
+              <div class="cycle-step-num">3</div>
+              <div class="cycle-step-content">
+                <strong>Reporte semanal a Gerencia de Marketing</strong>
+                <p>Presentación del reporte con resultados de la semana: leads, cierres, ingresos parciales, acciones ejecutadas y bloqueos identificados.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ciclo Mensual -->
+        <div class="cycle-block">
+          <div class="cycle-header">
+            <span class="cycle-tag">Mensual</span>
+            <span class="cycle-title">Análisis, ajuste estratégico y reporte</span>
+          </div>
+          <div class="cycle-body">
+            <div class="cycle-step">
+              <div class="cycle-step-num">1</div>
+              <div class="cycle-step-content">
+                <strong>Análisis de resultados vs. metas</strong>
+                <p>Comparación de ingreso real vs. meta total y por marca. Identificación de brechas, marcas con buen desempeño y marcas que requieren intervención estratégica.</p>
+              </div>
+            </div>
+            <div class="cycle-step">
+              <div class="cycle-step-num">2</div>
+              <div class="cycle-step-content">
+                <strong>Ajuste de estrategia</strong>
+                <p>Con base en los resultados, se ajusta la estrategia del mes siguiente: canales, acciones, marcas prioritarias, cambios en la propuesta comercial.</p>
+              </div>
+            </div>
+            <div class="cycle-step">
+              <div class="cycle-step-num">3</div>
+              <div class="cycle-step-content">
+                <strong>Reporte mensual a Gerencia de Marketing</strong>
+                <p>Presentación del reporte completo mensual con análisis de resultados, estrategia del siguiente mes y proyección de ingresos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 06 · RESULTADOS ESPERADOS -->
+    <section>
+      <div class="section-label">06 · Resultados Esperados</div>
+      <h3>¿Cómo se mide el éxito?</h3>
+      <table class="kpi-table">
+        <thead>
+          <tr>
+            <th>Resultado</th>
+            <th>¿Qué significa?</th>
+            <th>¿Cómo se mide?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ingreso total por eventos y pedidos especiales</td>
+            <td>Suma del ingreso generado por todos los eventos y pedidos especiales cerrados en el periodo, sin importar la marca.</td>
+            <td>$ total facturado en el mes vs. meta del mes</td>
+          </tr>
+          <tr>
+            <td>Ingreso por marca</td>
+            <td>Desglose del ingreso por cada una de las 7 marcas de AMG. Permite identificar cuáles marcas cumplen su meta y cuáles no.</td>
+            <td>$ facturado por marca / mes vs. meta por marca</td>
+          </tr>
+          <tr>
+            <td>Tasa de conversión de leads</td>
+            <td>Porcentaje de leads recibidos que se convierten en una venta cerrada —evento o pedido especial confirmado—.</td>
+            <td>Leads cerrados ÷ leads recibidos × 100</td>
+          </tr>
+          <tr>
+            <td>Tiempo de respuesta a leads</td>
+            <td>Velocidad con la que se contacta y atiende a un lead desde su entrada. Un tiempo alto implica pérdida de interés o venta.</td>
+            <td>Horas desde recepción del lead hasta primera respuesta</td>
+          </tr>
+          <tr>
+            <td>Satisfacción del cliente post-evento</td>
+            <td>Confirmación de que el cliente tuvo una experiencia satisfactoria después del evento o pedido especial.</td>
+            <td>% de clientes contactados post-evento con respuesta positiva; registro de comentarios e incidencias</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="kpi-note">Las metas numéricas específicas (monto mensual, tasa de conversión esperada, tiempo máximo de respuesta) son definidas por Dirección y Gerencia de Marketing al inicio de cada periodo.</p>
+    </section>
+
+    <!-- 07 · LÍMITES DE AUTORIDAD -->
+    <section>
+      <div class="section-label">07 · Límites de Autoridad y Escalación</div>
+      <h3>¿Qué puede decidir solo y qué debe escalar?</h3>
+      <div class="authority-grid">
+        <div class="authority-card can">
+          <h4>Puede decidir / comprometer</h4>
+          <ul>
+            <li>Elaborar y enviar cotizaciones dentro de la lista de precios establecida</li>
+            <li>Confirmar fechas de eventos dentro de la capacidad operativa disponible validada con Operaciones</li>
+            <li>Gestionar y dar seguimiento a leads sin aprobación previa</li>
+            <li>Coordinar acciones de marketing con Coordinadores de Marca dentro de la estrategia aprobada</li>
+            <li>Contactar al cliente en cualquier etapa del proceso de venta y post-evento</li>
+          </ul>
+        </div>
+        <div class="authority-card cannot">
+          <h4>Debe escalar a Gerencia</h4>
+          <ul>
+            <li>Cotizaciones fuera de la lista de precios o con descuentos no autorizados</li>
+            <li>Eventos con requerimientos logísticos fuera de la capacidad operativa estándar</li>
+            <li>Cambios en la estrategia de marca que afecten presupuesto o alcance</li>
+            <li>Clientes insatisfechos con incidencias graves post-evento</li>
+            <li>Acuerdos comerciales atípicos o condiciones especiales de pago</li>
+          </ul>
+        </div>
+      </div>
+      <div class="escalation-note">
+        <strong>Canal de escalación:</strong> Todas las situaciones fuera de los parámetros anteriores deben comunicarse a <strong>Gerencia de Marketing</strong> antes de dar respuesta final al cliente o comprometer a Operaciones.
+      </div>
+    </section>
+
+    <!-- 08 · REPORTES -->
+    <section>
+      <div class="section-label">08 · Reportes</div>
+      <h3>¿Qué reporta y con qué frecuencia?</h3>
+      <div class="report-cards">
+        <div class="report-card">
+          <h4>Reporte Semanal <span class="badge badge-week">Cada semana</span></h4>
+          <ul>
+            <li>Leads nuevos recibidos</li>
+            <li>Estado del pipeline de eventos y pedidos</li>
+            <li>Cierres de la semana e ingreso generado</li>
+            <li>Acciones de marketing ejecutadas por marca</li>
+            <li>Bloqueos, riesgos o incidencias identificadas</li>
+          </ul>
+        </div>
+        <div class="report-card">
+          <h4>Reporte Mensual <span class="badge badge-month">Cada mes</span></h4>
+          <ul>
+            <li>Ingreso total generado vs. meta del mes</li>
+            <li>Ingreso y cumplimiento de meta por marca</li>
+            <li>Tasa de conversión de leads</li>
+            <li>Retroalimentación de clientes post-evento</li>
+            <li>Estrategia y proyección del mes siguiente</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 · RELACIONES CLAVE -->
+    <section>
+      <div class="section-label">09 · Relaciones Clave</div>
+      <h3>¿Con quién trabaja?</h3>
+      <div class="relations-grid">
+        <div class="relation-card">
+          <div class="rel-direction">Reporta a</div>
+          <div class="rel-who">Gerencia de Marketing</div>
+          <div class="rel-desc">Recibe metas, lineamientos estratégicos y retroalimentación de resultados. Escala decisiones fuera de su autoridad. Presenta reportes semanales y mensuales.</div>
+        </div>
+        <div class="relation-card">
+          <div class="rel-direction">Recibe metas de</div>
+          <div class="rel-who">Dirección</div>
+          <div class="rel-desc">Recibe las metas generales de ventas para el área de eventos y pedidos especiales de todo el grupo por periodo.</div>
+        </div>
+        <div class="relation-card">
+          <div class="rel-direction">Coordina con</div>
+          <div class="rel-who">Coordinadores de Marca AMG</div>
+          <div class="rel-desc">Define y alinea las acciones de marketing por marca necesarias para generar leads de eventos y pedidos especiales.</div>
+        </div>
+        <div class="relation-card">
+          <div class="rel-direction">Coordina con</div>
+          <div class="rel-who">Operaciones</div>
+          <div class="rel-desc">Valida viabilidad logística durante la venta y coordina la ejecución operativa de cada evento o pedido especial una vez cerrado.</div>
+        </div>
+        <div class="relation-card">
+          <div class="rel-direction">Atiende a</div>
+          <div class="rel-who">Clientes / Leads</div>
+          <div class="rel-desc">Gestiona directamente a quienes solicitan eventos o pedidos especiales. Mantiene la relación antes, durante y después del evento.</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- COLOR PALETTE STRIP -->
+  <div style="background:var(--black); padding: 20px 60px; display:flex; gap:0; align-items:center; justify-content: flex-start; flex-wrap:wrap; gap:8px;">
+    <span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--lavender);margin-right:16px;opacity:0.7;">Paleta AMG</span>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:6px;">
+        <div style="width:28px;height:28px;border-radius:50%;background:#EB4751;"></div>
+        <span style="font-size:11px;color:#aaa;">EB4751</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <div style="width:28px;height:28px;border-radius:50%;background:#F98C53;"></div>
+        <span style="font-size:11px;color:#aaa;">F98C53</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <div style="width:28px;height:28px;border-radius:50%;background:#A3A7C6;"></div>
+        <span style="font-size:11px;color:#aaa;">A3A7C6</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <div style="width:28px;height:28px;border-radius:50%;background:#26283F;border:1px solid #444;"></div>
+        <span style="font-size:11px;color:#aaa;">26283F</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <div style="width:28px;height:28px;border-radius:50%;background:#000000;border:1px solid #444;"></div>
+        <span style="font-size:11px;color:#aaa;">000000</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>AMG Hospitality Group · Área de Marketing · <span>Coordinación de Ventas de Eventos</span> · Versión 1.2 · Abril 2026</p>
+  </footer>
+
+</body>
+</html>
